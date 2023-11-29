@@ -7,17 +7,17 @@
 // minMax([1]) ➞ [1, 1]
 
 function minMax(arr) {
-    let min = arr[0]
-    let max = arr[0]
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < min) {
-            min = arr[i]
-          }
-          if (arr[i] > max) {
-            max = arr[i];
-          }
+  let min = arr[0];
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
     }
-    return [min, max]
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return [min, max];
 }
 
 // 2. Add up the Numbers from a Single Number
@@ -29,11 +29,11 @@ function minMax(arr) {
 // addUp(600) ➞ 180300
 
 function addUp(num) {
-    let total = 0
-    for (let i = 1; i < num + 1; i++) {
-        total += i
-    }
-    return total
+  let total = 0;
+  for (let i = 1; i < num + 1; i++) {
+    total += i;
+  }
+  return total;
 }
 
 // 3. Left Shift by Powers of Two
@@ -55,13 +55,13 @@ function addUp(num) {
 // shiftToLeft(46, 6) ➞ 2944
 
 function shiftToLeft(a, b) {
-    let two = 2
-    let total = 0
-    for (let i = b; i > 1; i--) {
-        two *= 2
-    }
-    total = a * two
-    return total
+  let two = 2;
+  let total = 0;
+  for (let i = b; i > 1; i--) {
+    two *= 2;
+  }
+  total = a * two;
+  return total;
 }
 
 // 4. RegEx Exercise 1: Find the Time
@@ -69,7 +69,7 @@ function shiftToLeft(a, b) {
 
 // Make a regexp to find time in the string: Breakfast at 09:00 in the room 123:456. In this task there's no need to check time correctness yet, so 25:99 can also be a valid result. The regexp should not match 123:456.
 
-'\b\d{2}:\d{2}\b'
+("\bd{2}:d{2}\b");
 
 // 5. Largest Swap
 // Write a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.
@@ -87,8 +87,8 @@ function shiftToLeft(a, b) {
 // largestSwap(99) ➞ true
 
 function largestSwap(num) {
-    let sorted = num.toString().split('')
-    return (sorted[0] >= sorted[1])
+  let sorted = num.toString().split("");
+  return sorted[0] >= sorted[1];
 }
 
 // 6. How Much is True?
@@ -100,12 +100,12 @@ function largestSwap(num) {
 // countTrue([]) ➞ 0
 
 function countTrue(arr) {
-    if (arr.length === 0) return 0
-    let total = 0
-    for (let word of arr) {
-        if (word === true) total++
-    }
-    return total
+  if (arr.length === 0) return 0;
+  let total = 0;
+  for (let word of arr) {
+    if (word === true) total++;
+  }
+  return total;
 }
 
 // 7. A Redundant Function
@@ -122,10 +122,10 @@ function countTrue(arr) {
 // f3() ➞ ""
 
 const redundant = (str) => {
-    return function() {
-        return str
-    }
-}
+  return function () {
+    return str;
+  };
+};
 
 // 8. Find Number of Digits in Number
 // Create a function that will return an integer number corresponding to the amount of digits in the given integer num.
@@ -137,8 +137,8 @@ const redundant = (str) => {
 // num_of_digits(0) ➞ 1
 
 function num_of_digits(num) {
-    let total = num.toString().split('').length
-    return total
+  let total = num.toString().split("").length;
+  return total;
 }
 
 // 9. Array of Multiples
@@ -150,12 +150,12 @@ function num_of_digits(num) {
 // arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102]
 
 function arrayOfMultiples(a, b) {
-    let arr = []
-    for (let i = 1; i < b+1; i++) {
-        let newNum = i * a
-        arr.push(newNum)
-    }
-    return arr
+  let arr = [];
+  for (let i = 1; i < b + 1; i++) {
+    let newNum = i * a;
+    arr.push(newNum);
+  }
+  return arr;
 }
 
 // 10. Concatenate Variable Number of Input Arrays
@@ -168,12 +168,12 @@ function arrayOfMultiples(a, b) {
 // concat([4, 4, 4, 4, 4]) ➞ [4, 4, 4, 4, 4]
 
 const concat = (...n) => {
-    let arr = []
-    for (let i of n) {
-        arr.push(i)
-    }
-    return arr.flat()
-}
+  let arr = [];
+  for (let i of n) {
+    arr.push(i);
+  }
+  return arr.flat();
+};
 
 // 11. Sort the Unsortable
 // In this challenge you will be given an array similar to the following:
@@ -192,5 +192,5 @@ const concat = (...n) => {
 // sortIt([[3], 4, [2], [5], 1, 6]) ➞ [1, [2], [3], 4, [5], 6]
 
 const sortIt = (arr) => {
-    return arr.sort()
-}
+  return arr.sort();
+};
