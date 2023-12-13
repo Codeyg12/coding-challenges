@@ -29,7 +29,7 @@ const readFileAsync = (file, cb) => {
         if (err)  {
             return cb(err)
         }
-        cb('', data)
+        cb(null, data)
     })
 }
 
@@ -38,7 +38,7 @@ const writeFileAsync = (file, data, cb) => {
         if (err) {
             return cb(err)
         }
-        cb('')
+        cb(null)
     })
 }
 
@@ -47,11 +47,7 @@ readFileAsync(inputFile, (error, data) => {
     
     writeFileAsync(outputFile, data, (writeErr) => {
         if (writeErr) throw writeErr
+        console.log('success');
     })
 
-    console.log('success');
 })
-
-
-// Challenge 2: Promisify a Callback Function
-// Take a common callback-based function, such as fs.readFile, and promisify it. Create a function that returns a Promise-based version of the callback function.
