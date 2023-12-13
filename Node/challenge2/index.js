@@ -20,30 +20,3 @@ const promiseFile = async () => {
 }
 
 promiseFile()
-// const readFileAsync = (file, cb) => {
-//     fs.readFile(file, 'utf-8', (err, data) => {
-//         if (err)  {
-//             return cb(err)
-//         }
-//         cb(null, data)
-//     })
-// }
-
-// const writeFileAsync = (file, data, cb) => {
-//     fs.writeFile(file, data, 'utf-8', (err) => {
-//         if (err) {
-//             return cb(err)
-//         }
-//         cb(null)
-//     })
-// }
-
-// readFileAsync(inputFile, (error, data) => {
-//     if (error) throw error
-    
-//     writeFileAsync(outputFile, data, (writeErr) => {
-//         if (writeErr) throw writeErr
-//         console.log('success');
-//     })
-
-// })
