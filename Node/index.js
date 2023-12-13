@@ -24,14 +24,32 @@ const fs = require('fs')
 const inputFile = 'text.txt'
 const outputFile = 'output.txt'
 
-fs.readFile(inputFile, 'utf-8', (err, data) => {
-    if (err) throw err
-    console.log(data);
-})
+const readFileAsync = (file, cb) => {
+    fs.readFile(file, 'utf-8', (err, data) => {
+        if (err)  {
+            return cb(err)
+        }
+        cb('', data)
+    })
+}
 
-fs.writeFile(outputFile, inputFile, 'utf-8', (err) => {
-    if (err) throw err
-    console.log('bueno');
+const writeFileAsync = (file, data, cb) => {
+    fs.writeFile(file, data, 'utf-8', (err) => {
+        if (err) {
+            return cb(err)
+        }
+        cb('')
+    })
+}
+
+readFileAsync(inputFile, (error, data) => {
+    if (error) throw error
+    
+    writeFileAsync(outputFile, data, (writeErr) => {
+        if (writeErr) throw writeErr
+    })
+
+    console.log('success');
 })
 
 
