@@ -19,9 +19,20 @@
 
 // Challenge 1: File Read and Write (Callbacks)
 // Create a Node.js script that reads the contents of a text file and writes them to another file using asynchronous file I/O with callbacks. Ensure proper error handling and support for reading and writing large files.
+const fs = require('fs')
 
+const inputFile = 'text.txt'
+const outputFile = 'output.txt'
 
+fs.readFile(inputFile, 'utf-8', (err, data) => {
+    if (err) throw err
+    console.log(data);
+})
 
+fs.writeFile(outputFile, inputFile, 'utf-8', (err) => {
+    if (err) throw err
+    console.log('bueno');
+})
 
 
 // Challenge 2: Promisify a Callback Function
