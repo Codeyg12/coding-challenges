@@ -3,10 +3,23 @@
 const fs = require('fs')
 const { promsifiy } = require('util')
 
-console.log('Mucho gusto');
-// const inputFile = 'text.txt'
-// const outputFile = 'output.txt'
+const inputFile = 'text.txt'
+const outputFile = 'output.txt'
 
+const readFileAsync = promsifiy(fs.readFile)
+const writeFileAsync = promsifiy(fs.writeFile)
+
+const promiseFile = async () => {
+    try {
+        let data = await readFileAsync(inputFile, 'utf-8')
+        await writeFileAsync(outputFile, data, 'utf-8')
+        console.log('success');
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+promiseFile()
 // const readFileAsync = (file, cb) => {
 //     fs.readFile(file, 'utf-8', (err, data) => {
 //         if (err)  {
