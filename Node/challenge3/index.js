@@ -1,0 +1,2 @@
+// Challenge 3: Fetch and Process Data (Promises)
+// Using the Node.js http or axios library, fetch data from an external API (e.g., JSONPlaceholder or any public API). Once the data is retrieved, use Promises to process and display specific information from the response.
