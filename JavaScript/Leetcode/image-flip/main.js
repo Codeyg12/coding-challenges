@@ -1,16 +1,11 @@
 const flipAndInvertImage = (image) => {
-    console.log('?',image);
     for (const arr of image) {
         arr.reverse()
-        for (let num in arr) {
-            if (arr[num] == 0) {
-                arr[num] = 1
-            } else {
-                arr[num] = 0
-            }
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i] === 0 ? 1 : 0
         }
     }
-    console.log('Answer',image);
+    console.log(image);
     return image
 }
 
